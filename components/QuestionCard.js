@@ -2,42 +2,32 @@
 import { useEffect, useState } from "react";
 
 export default function QuestionCard({ question, onNext, onBack }) {
-  const [fade, setFade] = useState(false);
+  const [displayedText, setDisplayedText] = useState(question);
 
   useEffect(() => {
-    setFade(true);
-    const timer = setTimeout(() => setFade(false), 300);
-    return () => clearTimeout(timer);
+    setDisplayedText(question); // show full text immediately
   }, [question]);
 
   return (
-    <div
-      className={`bg-white/20 backdrop-blur-md p-6 md:p-10 rounded-3xl shadow-2xl max-w-md mx-auto text-center border border-white/20 transform transition-all duration-500 ${
-        fade ? "opacity-0 scale-95" : "opacity-100 scale-100"
-      } animate-slideIn`}
-    >
-      <h2 className="text-xl md:text-3xl font-extrabold mb-8 text-white drop-shadow-lg">
-        {question}
+    <div className="bg-white/20 backdrop-blur-md p-8 md:p-12 rounded-3xl shadow-2xl max-w-lg mx-auto text-center border border-white/20 transform transition-all duration-500">
+      <h2 className="text-2xl md:text-5xl font-extrabold mb-12 text-white drop-shadow-lg min-h-[6rem] flex justify-center items-center">
+        {displayedText}
       </h2>
-      <div className="flex flex-col sm:flex-row justify-around gap-4">
+
+      <div className="flex flex-col sm:flex-row justify-around gap-6">
         <button
           onClick={onNext}
-          className="relative overflow-hidden text-white font-bold px-5 md:px-6 py-3 md:py-4 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-indigo-300 focus:ring-opacity-50"
-          style={{
-            background: "linear-gradient(270deg, #3b82f6, #6366f1, #8b5cf6)",
-            backgroundSize: "600% 600%",
-            animation: "gradientShift 6s ease infinite",
-          }}
+          className="text-white font-extrabold px-16 md:px-24 py-6 md:py-8 rounded-3xl shadow-2xl transform transition-all duration-300 hover:scale-105 hover:-translate-y-2 focus:outline-none focus:ring-6 focus:ring-indigo-400 focus:ring-opacity-50"
+          style={{ background: "#efc04a" }}
         >
           Дараах асуулт
-          <span className="absolute inset-0 bg-white/20 opacity-0 hover:opacity-30 transition-opacity duration-300 rounded-xl"></span>
         </button>
+
         <button
           onClick={onBack}
-          className="relative overflow-hidden bg-gray-600 hover:bg-gray-700 text-white font-bold px-5 md:px-6 py-3 md:py-4 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-gray-400 focus:ring-opacity-50"
+          className="bg-gray-700 hover:bg-gray-800 text-white font-extrabold px-16 md:px-24 py-6 md:py-8 rounded-3xl shadow-2xl transform transition-all duration-300 hover:scale-105 hover:-translate-y-2 focus:outline-none focus:ring-6 focus:ring-gray-400 focus:ring-opacity-50"
         >
           Буцах
-          <span className="absolute inset-0 bg-white/20 opacity-0 hover:opacity-20 transition-opacity duration-300 rounded-xl"></span>
         </button>
       </div>
     </div>
