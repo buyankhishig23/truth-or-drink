@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -13,15 +12,16 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-.animate-fadeIn {
-  animation: fadeIn 0.8s ease forwards;
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-.animate-slideIn {
-  animation: slideIn 0.5s ease forwards;
-}
+.animate-fadeIn { animation: fadeIn 0.8s ease forwards; }
+.animate-slideIn { animation: slideIn 0.5s ease forwards; }
 
-/* Make sure full height */
+/* Full height */
 html, body, #__next {
   height: 100%;
   margin: 0;

@@ -22,7 +22,12 @@ export default function QuestionCard({ question, onNext, onBack }) {
       <div className="flex flex-col sm:flex-row justify-around gap-4">
         <button
           onClick={onNext}
-          className="relative overflow-hidden bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 text-white font-bold px-5 md:px-6 py-3 md:py-4 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-indigo-300 focus:ring-opacity-50"
+          className="relative overflow-hidden text-white font-bold px-5 md:px-6 py-3 md:py-4 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-indigo-300 focus:ring-opacity-50"
+          style={{
+            background: "linear-gradient(270deg, #3b82f6, #6366f1, #8b5cf6)",
+            backgroundSize: "600% 600%",
+            animation: "gradientShift 6s ease infinite",
+          }}
         >
           Дараах асуулт
           <span className="absolute inset-0 bg-white/20 opacity-0 hover:opacity-30 transition-opacity duration-300 rounded-xl"></span>

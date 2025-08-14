@@ -8,11 +8,11 @@ export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [filteredQuestions, setFilteredQuestions] = useState([]);
 
-  const categories = [...new Set(questions.map(q => q.category))];
+  const categories = [...new Set(questions.map((q) => q.category))];
 
   const startGame = (category) => {
     setSelectedCategory(category);
-    const filtered = questions.filter(q => q.category === category);
+    const filtered = questions.filter((q) => q.category === category);
     setFilteredQuestions(filtered);
     setCurrentIndex(0);
   };
@@ -51,10 +51,15 @@ export default function Home() {
                 <button
                   key={cat}
                   onClick={() => startGame(cat)}
-                  className="relative overflow-hidden bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white font-bold py-3 md:py-4 px-5 md:px-6 rounded-2xl shadow-xl transform transition-all duration-300 hover:scale-105 hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-pink-400 focus:ring-opacity-50"
+                  className="relative overflow-hidden font-medium rounded-lg text-sm px-5 py-2.5 text-white transition-transform duration-500 transform hover:scale-105 hover:-translate-y-1 focus:outline-none focus:ring-4 shadow-lg"
+                  style={{
+                    background: "linear-gradient(270deg, #8b5cf6, #ec4899, #f87171)",
+                    backgroundSize: "600% 600%",
+                    animation: "gradientShift 6s ease infinite",
+                  }}
                 >
                   {cat}
-                  <span className="absolute inset-0 bg-white/20 opacity-0 hover:opacity-30 transition-opacity duration-300 rounded-2xl"></span>
+                  <span className="absolute inset-0 bg-white/20 opacity-0 hover:opacity-30 transition-opacity duration-500 rounded-lg"></span>
                 </button>
               ))}
             </div>
