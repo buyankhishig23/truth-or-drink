@@ -36,24 +36,25 @@ export default function Home() {
       ></div>
 
       {/* Dark overlay */}
-      <div className="fixed top-0 left-0 w-full h-full bg-black/40 z-0"></div>
+      <div className="fixed top-0 left-0 w-full h-full bg-black/50 z-0"></div>
 
       {/* Page content */}
       <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-4">
         {!selectedCategory ? (
-          <div className="bg-black/50 backdrop-blur-md p-10 rounded-3xl shadow-2xl text-center animate-fadeIn">
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-12 text-white drop-shadow-lg animate-pulse">
+          <div className="bg-black/40 backdrop-blur-md p-8 md:p-12 rounded-3xl shadow-2xl text-center animate-fadeIn">
+            <h1 className="text-3xl md:text-5xl font-extrabold mb-10 text-white drop-shadow-lg animate-pulse">
               Асуултын төрлөө сонго
             </h1>
 
-            <div className="flex gap-6 justify-center flex-wrap animate-slideIn">
+            <div className="flex gap-4 md:gap-6 justify-center flex-wrap animate-slideIn">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => startGame(cat)}
-                  className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-400 text-white font-bold py-4 px-6 rounded-2xl shadow-lg transform hover:-translate-y-2 hover:scale-105 transition-all duration-300"
+                  className="relative overflow-hidden bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white font-bold py-3 md:py-4 px-5 md:px-6 rounded-2xl shadow-xl transform transition-all duration-300 hover:scale-105 hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-pink-400 focus:ring-opacity-50"
                 >
                   {cat}
+                  <span className="absolute inset-0 bg-white/20 opacity-0 hover:opacity-30 transition-opacity duration-300 rounded-2xl"></span>
                 </button>
               ))}
             </div>
