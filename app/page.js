@@ -129,7 +129,7 @@ export default function Home() {
         {!selectedCategory ? (
           <div className="bg-black/40 backdrop-blur-md p-10 md:p-16 rounded-3xl shadow-2xl text-center">
             <h1
-              className="text-[48px] md:text-[64px] font-extrabold mb-12 text-white"
+              className="text-[64px] md:text-[82px] font-extrabold mb-12 text-white"
               style={{
                 textShadow:
                   "0 0 8px #ffffff, 0 0 16px #ffffff, 0 0 24px #ffffff",
@@ -138,27 +138,26 @@ export default function Home() {
               Асуултын төрлөө сонго
             </h1>
 
-            <div className="flex gap-12 justify-center flex-wrap">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => startGame(cat)}
-                  className="flex items-center justify-center font-extrabold
-                        w-32 h-32 md:w-40 md:h-40 rounded-full
-                        text-[16px] md:text-[20px] text-white
-                        shadow-[0_0_20px_rgba(255,215,0,0.6)]
-                        transition-transform duration-300 transform
-                        hover:scale-105 hover:-translate-y-1
-                        focus:outline-none focus:ring-4 focus:ring-yellow-400"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, #ffb703, #f48c06, #d00000)",
-                  }}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
+          <div className="flex gap-12 justify-center flex-wrap">
+      {categories.map((cat) => (
+              <button
+            key={cat}
+            onClick={() => startGame(cat)}
+            className="flex items-center justify-center font-extrabold
+                      rounded-full text-white shadow-2xl hover:scale-110 transition-transform
+                      focus:outline-none focus:ring-8 focus:ring-yellow-400"
+            style={{
+              width: "80px",   // exact pixel width
+              height: "60px",  // exact pixel height
+              fontSize: "15px", // text size
+              background: "linear-gradient(135deg, #ffb703, #f48c06, #d00000)",
+            }}
+          >
+            {cat}
+          </button>
+      ))}
+    </div>
+
           </div>
         ) : (
           <>
