@@ -49,25 +49,27 @@ export default function Home() {
 
 
 
-          <div className="flex gap-6 justify-center flex-wrap">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => startGame(cat)}
-                className="relative overflow-hidden font-extrabold rounded-2xl
-                          text-[20px] md:text-[30px] px-8 md:px-12 py-4 md:py-6
-                          text-white shadow-[0_0_20px_rgba(255,215,0,0.6)]
-                          transition-transform duration-300 transform
-                          hover:scale-105 hover:-translate-y-1
-                          focus:outline-none focus:ring-4 focus:ring-yellow-400"
-                style={{
-                  background: "linear-gradient(135deg, #ffb703, #f48c06, #d00000)",
-                }}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
+        <div className="flex gap-12 justify-center flex-wrap">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => startGame(cat)}
+              className="flex items-center justify-center font-extrabold
+                        w-32 h-32 md:w-40 md:h-40 rounded-full
+                        text-[16px] md:text-[20px] text-white
+                        shadow-[0_0_20px_rgba(255,215,0,0.6)]
+                        transition-transform duration-300 transform
+                        hover:scale-105 hover:-translate-y-1
+                        focus:outline-none focus:ring-4 focus:ring-yellow-400"
+              style={{
+                background: "linear-gradient(135deg, #ffb703, #f48c06, #d00000)",
+              }}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
 
           </div>
         ) : (

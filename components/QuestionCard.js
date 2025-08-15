@@ -19,7 +19,7 @@ export default function QuestionCard({ question, onNext, onBack }) {
         {displayedText}
       </h2>
 
-      <div className="flex flex-col sm:flex-row justify-around gap-6">
+      <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
         <button
           onClick={onNext}
           className="text-white font-extrabold px-16 md:px-24 py-6 md:py-8 rounded-3xl shadow-md transform transition-all duration-300 hover:scale-101 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-50"
